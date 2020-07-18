@@ -83,3 +83,28 @@ const mainMenuTemplate = [
         ]
     }
 ]
+
+// If Mac add empty object to menu
+if (process.platform === 'darwin') {
+    mainMenuTemplate.unshift({
+      label: "Electron",
+    });
+}
+
+if (process.env.NODE_ENV !== 'production') {
+    mainMenuTemplate.push({
+      label: "Developer Tools",
+      submenu: [
+        {
+          label: "Toggle Developer Tools",
+          accelerator: "CmdOrCtrl+I",
+          click(item, focusedWindow) {
+              focusedWindow.toggleDevTools();
+          },
+        },
+        {
+            role: 'reload'
+        }
+      ],
+    });
+}
