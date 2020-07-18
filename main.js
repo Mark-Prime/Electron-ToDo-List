@@ -28,9 +28,48 @@ app.on('ready', function(){
     Menu.setApplicationMenu(mainMenu)
 })
 
+// Handle create add window
+function createAddWindow() {
+    // Create new window
+    addWindow = new BrowserWindow({
+        height: 200,
+        width:  300,
+        webPreferences: {
+            nodeIntegration: true,
+        },
+    });
+
+    // Load html file into window
+    addWindow.loadURL(
+      url.format({
+        pathname: path.join(__dirname, "addWindow.html"),
+        protocol: "file:",
+        slashes: true,
+      })
+    );
+}
+
 // Create menu template
 const mainMenuTemplate = [
     {
-        label: 'File'
+        label: 'File', 
+        submenu: [
+            {
+                label: 'Add Item',
+                click() {
+                    createAddWindow()
+                },
+            },
+            {
+                label: 'Clear Items',
+            },
+            {
+                label: 'Quit',
+                accelerator: 'CmdOrCtrl+Q',
+                click(){
+                    app.quit()
+                }
+            }
+        ]
     }
 ]
