@@ -15,6 +15,11 @@ app.on('ready', function(){
         }
     })
 
+    // Quit app when closed
+    mainWindow.on('closed', function() {
+        app.quit()
+    })
+
     // Load html file into window
     mainWindow.loadURL(url.format({
         pathname: path.join(__dirname, 'mainWindow.html'),
@@ -47,6 +52,11 @@ function createAddWindow() {
         slashes: true,
       })
     );
+
+    // Garbage collection
+    addWindow.on("closed", function () {
+      addWindow = null;
+    });
 }
 
 // Create menu template
