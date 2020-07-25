@@ -1,6 +1,5 @@
 const electron = require("electron");
 const { ipcRenderer } = electron;
-const ul = document.querySelector('ul')
 const mainBody = document.getElementById('main-body')
 const header = document.querySelector(".header");
 const subheader = document.querySelector(".subheader");
