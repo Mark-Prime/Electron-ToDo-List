@@ -2,3 +2,12 @@
     padding: 0 32px;
     line-height: normal;
 }
+
+.completed {
+    text-decoration: line-through;
+    color: red;
+}
+
+.title {
+    color: black;
+}
