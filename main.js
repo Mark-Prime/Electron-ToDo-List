@@ -5,7 +5,7 @@ const path = require('path');
 const { app, BrowserWindow, Menu, ipcMain } = electron;
 
 // SET ENV
-process.env.NODE_ENV = 'production';
+process.env.NODE_ENV = '';
 
 let mainWindow; 
 
@@ -25,7 +25,7 @@ app.on('ready', function(){
 
     // Load html file into window
     mainWindow.loadURL(url.format({
-        pathname: path.join(__dirname, 'mainWindow.html'),
+        pathname: path.join(__dirname, 'Windows/mainWindow/mainWindow.html'),
         protocol: 'file:',
         slashes: true
     }))
@@ -40,7 +40,7 @@ app.on('ready', function(){
 function createAddWindow() {
     // Create new window
     addWindow = new BrowserWindow({
-        height: 200,
+        height: 350,
         width:  300,
         webPreferences: {
             nodeIntegration: true,
@@ -50,7 +50,7 @@ function createAddWindow() {
     // Load html file into window
     addWindow.loadURL(
       url.format({
-        pathname: path.join(__dirname, "addWindow.html"),
+        pathname: path.join(__dirname, "Windows/addWindow/addWindow.html"),
         protocol: "file:",
         slashes: true,
       })

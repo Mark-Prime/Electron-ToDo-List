@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="../../css/materialize.min.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="mainWindow.css" media="screen,projection" />
+    <title>Add Item</title>
+</head>
+<body>
+    <div class="container">
+        <form>
+            <div class="input-field">
+                <span>
+                    <label>Item Title</label>
+                    <input type="text" id="item" autofocus>
+                </span>
+            </div>
+            <div class="input-field">
+                <input id="description" type="text">
+                <label for="description">Description</label>
+            </div>
+            <label>Importance</label>
+            <select class="browser-default" id="importance">
+                <option value="" disabled selected>Choose your option</option>
+                <option value="Very Important">Very Important</option>
+                <option value="Important">Important</option>
+                <option value="Moderate">Moderate</option>
+                <option value="Not Important">Not Important</option>
+                <option value="Do It Later">Do It Later</option>
+            </select>
+            <div class="input-field"><button class="btn waves-effect waves-light" type="submit">Add Item</button></div>
+        </form>
+    </div>
+    <script type="text/javascript" src="../../js/materialize.min.js"></script>
+    <script type="text/javascript" src="addWindow.js"></script>
+</body>
+</html>

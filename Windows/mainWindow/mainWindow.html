@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="../../css/materialize.min.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="mainWindow.css" media="screen,projection" />
+    <title>ToDo List</title>
+</head>
+<body>
+    <nav>
+        <div class="nav-wrapper">
+            <a class="brand-logo center">
+                Todo List
+            </a>
+        </div>
+    </nav>
+    <ul id="slide-out" class="sidenav">
+        <li><a class="header">Header</a></li>
+        <li><a class="subheader">SubHeader</a></li>
+        <li>
+            <div class="divider"></div>
+        </li>
+        <li><p class="description">description</p></li>
+        <li>
+            <div class="divider"></div>
+        </li>
+        <li><a class="red waves-effect sidenav-close" href="#!" id="btn-delete">Delete Item</a></li>
+    </ul>
+    <div class="container">
+        <ul></ul>
+        <table class="highlight">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Name</th>
+                    <th>Importance</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="main-body">
+                <tr id="laundry">
+                    <td>
+                        <label>
+                            <input type="checkbox" class="filled-in" id="chb-laundry"/>
+                            <span id="span-laundry">Incomplete</span>
+                        </label>
+                    </td>
+                    <td>Laundry</td>
+                    <td>Important</td>
+                    <td>
+                        <a 
+                            href="#" 
+                            data-target="slide-out" 
+                            class="sidenav-trigger"
+                            data-title="Laundry"
+                            data-importance="Important"
+                            data-description="Important activity"
+                        >Details...</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script type="text/javascript" src="../../js/materialize.min.js"></script>
+    <script type="text/javascript" src="mainWindow.js"></script>
+</body>
+</html>
