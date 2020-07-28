@@ -36,7 +36,6 @@ function setupTrigger() {
           } else {
             e.toElement.parentElement.children[1].textContent = "Incomplete";
             span.classList.remove("completed");
-            
           }
         });
         event.setAttribute("enabled", "true");
@@ -58,7 +57,7 @@ ipcRenderer.on("item:add", function (e, item) {
                         <span>Incomplete</span>
                     </label>
                 </td>
-                <td><span id="span-${item.title}">${item.title}</span></td>
+                <td><span id="span-${item.title}"><p class="title">${item.title}<p></span></td>
                 <td>${item.importance}</td>
                 <td>
                     <a 
